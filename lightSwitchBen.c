@@ -11,6 +11,7 @@ void flipSwitch()
 	}
 	motor(light) = 0;
 }
+//waiting for first clap
 int waitForClap(int clapCounter)
 {
 	while(SensorValue(sound) < 50)
@@ -27,7 +28,7 @@ int waitForClap(int clapCounter)
 	}
 	return clapCounter;
 }
-
+//uses for second clap;
 int waitForDoubleClap(int clapCounter)
 {
 	clapCounter = waitForClap(clapCounter);
@@ -40,6 +41,10 @@ int waitForDoubleClap(int clapCounter)
 		if(SensorValue(sound) < 100)
 		{
 			clapCounter ++;
+			while(getTimerValue(timer1) < 1001)
+			{
+				//does nothing
+			}
 	  }
 
 	}
