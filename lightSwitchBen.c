@@ -38,7 +38,7 @@ int waitForDoubleClap(int clapCounter)
 	resetTimer(timer1);
 	while(getTimerValue(timer1) < 1000)
 	{
-		if(SensorValue(sound) < 100)
+		if(SensorValue(sound) > 50)
 		{
 			clapCounter ++;
 			while(getTimerValue(timer1) < 1001)
@@ -58,10 +58,11 @@ task main()
 	{
 		int clapNum = 0;
 		clapNum = waitForDoubleClap(clapNum);
-		if(clapNum >= 2)
+		if(clapNum == 2)
 		{
 			flipSwitch();
 		}
+
 	}
 
 
