@@ -29,14 +29,14 @@ int calcSound()
 //waiting for first clap
 int waitForClap(int clapCounter)
 {
-	while(SensorValue(sound) < 45)
+	while(SensorValue(sound) < 35)
 	{
 
 	}
-	if(SensorValue(sound) > 45)
+	if(SensorValue(sound) > 35)
 	{
 		clapCounter ++;
-		while(SensorValue(sound) > 45)
+		while(SensorValue(sound) > 35)
 		{
 
 		}
@@ -53,7 +53,7 @@ int waitForDoubleClap(int clapCounter)
 	resetTimer(timer1);
 	while(getTimerValue(timer1) < 750)
 	{
-		if(SensorValue(sound) > 45)
+		if(SensorValue(sound) > 35)
 		{
 			clapCounter ++;
 			while(getTimerValue(timer1) < 751)
